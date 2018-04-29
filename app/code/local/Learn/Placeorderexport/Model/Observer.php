@@ -7,6 +7,8 @@ class Learn_Placeorderexport_Model_Observer extends Varien_Event_Observer
 		$orderIncrementId = $order->getIncrementId();
 		$orderData = Mage::getModel('sales/order')->loadByIncrementId($orderIncrementId)->getData();
 
+
+
 		/*- Storing Folder -*/
 		$helper = Mage::helper('placeorderexport');
 		if(!$helper->placeorderexport_enable()) {
@@ -14,12 +16,13 @@ class Learn_Placeorderexport_Model_Observer extends Varien_Event_Observer
 		}
 		$saveDirectory =  $helper->placeorderexport_path();
 		$filename = $helper->placeorderexport_pname();
-		$type = $helper->placeorderexport_type();		
-		
+		$type = $helper->placeorderexport_type();
+
+        $baseDirectory = Mage::getBaseDir()."/";
 		$filename = $baseDirectory.$saveDirectory."/".$filename;
 		
 		/* $saveDirectory = "/var/export/cron_export/"; */
-		$baseDirectory = Mage::getBaseDir()."/";
+
 		$saveDirectory = trim($saveDirectory, '/');
 		$newDirectory = "";
 		foreach(explode('/',$saveDirectory) as $val) {
@@ -50,6 +53,8 @@ class Learn_Placeorderexport_Model_Observer extends Varien_Event_Observer
 	
 	public function CsvExport($filename, $orderData) {
 		$filename .= "_".date('dmY-His').".csv";
+		$labelArray = "";
+		$valueArray = "";
 		foreach($orderData as $key => $value ) {
 			$labelArray .= $key.",";
 			$valueArray .= $value.",";		

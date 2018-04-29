@@ -11,18 +11,22 @@ class Learn_Placeorderexport_Helper_Data extends Mage_Core_Helper_Abstract
     }
 	
 	public function placeorderexport_enable() {
+        $store = Mage::app()->getStore();
 		return $this->conf(self::XML_PATH_POE_ENABLE, $store);
 	}
 	
 	public function placeorderexport_path() {
+        $store = Mage::app()->getStore();
 		return $this->conf(self::XML_PATH_POE_PATH, $store);
 	}
 	
 	public function placeorderexport_type() {
+        $store = Mage::app()->getStore();
 		return $this->conf(self::XML_PATH_POE_TYPE, $store);
 	}
 	
 	public function placeorderexport_pname() {
+        $store = Mage::app()->getStore();
 		return $this->conf(self::XML_PATH_POE_PNAME, $store);
 	}
 }
