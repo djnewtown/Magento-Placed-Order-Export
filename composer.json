@@ -17,4 +17,16 @@
   "require":{
     "magento-hackathon/magento-composer-installer":"*"
   }
+  "extra": {
+    "map": [
+      [
+        "app/code/local/Learn/Placeorderexport",
+        "app/code/local/Learn/Placeorderexport"
+      ],
+      [
+        "app/etc/modules/Learn_Placeorderexport.xml",
+        "app/etc/modules/Learn_Placeorderexport.xml"
+      ]
+    ]
+  }
 }
