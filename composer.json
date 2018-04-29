@@ -1,0 +1,20 @@
+{
+  "name":"djnewtown/magento-placed-order-export",
+  "type":"magento-module",
+  "license":"GPLv3",
+  "description":"Export Orders",
+  "authors":[
+    {
+      "name":"vijays91",
+      "role": "Author/Maintainer"
+    },
+    {
+      "name": "Daniel Janin",
+      "email": "dj@newtown.at",
+      "role": "Maintainer"
+    }
+  ],
+  "require":{
+    "magento-hackathon/magento-composer-installer":"*"
+  }
+}
